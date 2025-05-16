@@ -40,7 +40,7 @@ find ~ -type f -name ReadMeIfStuck.txt 2>/dev/null
 ```bash
 less /home/topson/ReadMeIfStuck.txt
 ```
-![Скриншот 1](screenshot_1)
+![Скриншот 1](screenshots/screenshot_1.png)
 
 ## Поиск файла `additionalHINT`
 Теперь ищем файл `additionalHINT`:
@@ -51,7 +51,7 @@ find / -type f -name 'additionalHINT' 2>/dev/null
 ```bash
 cat <path_to_file>/additionalHINT
 ```
-![Скриншот 2](screenshot_2)
+![Скриншот 2](screenshots/screenshot_2.png)
 
 ## Поиск и переход в директорию `telephone numbers`
 Для поиска директории с пробелами в названии используем обратный слэш:
@@ -70,7 +70,7 @@ ls
 ```bash
 cat readME.txt
 ```
-![Скриншот 3](screenshot_3)
+![Скриншот 3](screenshots/screenshot_3.png)
 
 ## Поиск директории `workflows` и файла, модифицированного 2016-09-12
 Для поиска директории `workflows` используем команду:
