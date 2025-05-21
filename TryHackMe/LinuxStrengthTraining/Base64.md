@@ -5,23 +5,23 @@
 ### Подключение по SSH
 Как и в предыдущем уроке, подключаемся к машине через SSH:
 
-''' bash
+``` bash
 ssh <username>@<ip_address>
-'''
+```
 
 ### Поиск файла encode.txt
 Ищем файл `encode.txt` в системе:
 
-''' bash
+``` bash
 find / -type f -name encode.txt 2>/dev/null
-'''
+```
 
 ### Декодирование encode.txt
 Декодируем содержимое файла из Base64 и просматриваем постранично:
 
-''' bash
+``` bash
 cat <path_to_file>/encode.txt | base64 -d | less
-'''
+```
 
 ### Поиск ключевой информации
 В содержимом ищем ключевое слово 'special'. Находим инструкцию о том, что пароль находится в файле `ent.txt`.
@@ -29,9 +29,9 @@ cat <path_to_file>/encode.txt | base64 -d | less
 ### Поиск файла ent.txt
 Ищем файл `ent.txt`:
 
-''' bash
+``` bash
 find / -type f -name ent.txt 2>/dev/null
-'''
+```
 
 ### Анализ содержимого ent.txt
 Содержимое файла похоже на хэш. Проверяем с помощью `hash-identifier` - это оказывается хэш MD4.
@@ -39,9 +39,9 @@ find / -type f -name ent.txt 2>/dev/null
 ### Взлом хэша с помощью John the Ripper
 Декодируем хэш:
 
-''' bash
+``` bash
 john --format=raw-md4 --wordlist=/usr/share/wordlists/rockyou.txt ent.txt
-'''
+```
 
 После выполнения команды получаем искомый пароль.
 
